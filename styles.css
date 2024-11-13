@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: #ffffff;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    justify-content: space-between;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.historic {
+    font-family: monospace;
+}
+
+#input {
+    border: none;
+    width: 100%;
+    background-color: transparent;
+    color: #ffffff;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+#input:focus {
+    outline: none;
+    border: none;
+}
+
+.path {
+    color: lime;
+}

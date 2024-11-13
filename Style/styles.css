@@ -41,3 +41,7 @@ p {
 .path {
     color: lime;
 }
+
+body {
+    font-family: monospace;
+}

@@ -1,4 +1,4 @@
-import { Command } from "../_Command.js";
+import { Command } from "../Processes/_Command.js";
 
 export const cd = new Command((user, args) => {
     if (args.length < 2 || args == null) {

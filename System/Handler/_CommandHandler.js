@@ -1,9 +1,9 @@
-import {test} from './Commands/test.js'
-import { notfound } from './Commands/notfound.js';
-import { clear } from './Commands/clear.js';
-import { cd } from './Commands/cd.js';
-import { mkdir } from './Commands/mkdir.js';
-import { ls } from './Commands/ls.js';
+import {test} from '../Commands/test.js'
+import { notfound } from '../Commands/notfound.js';
+import { clear } from '../Commands/clear.js';
+import { cd } from '../Commands/cd.js';
+import { mkdir } from '../Commands/mkdir.js';
+import { ls } from '../Commands/ls.js';
 
 export function RunCommand(user, command) {
     let args = extractArgs(command);

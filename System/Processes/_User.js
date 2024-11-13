@@ -1,6 +1,7 @@
 export class User {
-    constructor(name, parent, read, write, execute, owner) {
+    constructor(name, password, parent, read, write, execute, owner) {
         this.name = name;
+        this.password = password;
         this.parent = parent;
         this.permisisonsRead = read;
         this.permisisonsWrite = write;
@@ -22,3 +23,5 @@ export class User {
     }
     
 }
+
+export var __Users__ = []; 

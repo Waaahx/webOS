@@ -1,6 +1,6 @@
-import { Command } from "../_Command.js";
-import { Message } from "../_Display.js";
-import { Folder, __Folders__ } from "../_Folder.js";
+import { Command } from "../Processes/_Command.js";
+import { Message } from "../Processes/_Display.js";
+import { Folder, __Folders__ } from "../Processes/_Folder.js";
 
 export const ls = new Command((user, args) => {
     let _path = user.path;

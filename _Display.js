@@ -8,6 +8,7 @@ export class CommandMessage {
     display() {
         document.getElementById("historic").innerHTML += `<p><span class="path">${this.author}:~${this.path}$</span> ${this.message}</p>`;
         document.getElementById("input").value = ``;
+        document.getElementById("path").innerHTML = `<span class="path">${this.author}:~${this.path}$</span>`
     }
 }
 

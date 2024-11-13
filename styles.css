@@ -1,5 +1,4 @@
 .container {
-    display: flex;
     flex-direction: column;
     background-color: black;
     color: #ffffff;
@@ -27,13 +26,16 @@ p {
     width: 100%;
     background-color: transparent;
     color: #ffffff;
-    padding-bottom: 10px;
-    padding-top: 10px;
 }
 
 #input:focus {
     outline: none;
     border: none;
+}
+
+.input_section {
+    display: flex;
+    font-family: monospace;
 }
 
 .path {

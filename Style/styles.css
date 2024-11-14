@@ -1,15 +1,17 @@
-.container {
-    flex-direction: column;
-    background-color: black;
-    color: #ffffff;
-    height: 100%;
-    width: 100%;
+body {
+    font-family: monospace;
+}
+
+#terminal {
     position: absolute;
     left: 0;
     top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    color: #ffffff;
     overflow-x: hidden;
     overflow-y: scroll;
-    justify-content: space-between;
 }
 
 p {
@@ -17,31 +19,29 @@ p {
     padding: 0;
 }
 
-.historic {
-    font-family: monospace;
-}
-
-#input {
+input {
     border: none;
     width: 100%;
     background-color: transparent;
     color: #ffffff;
 }
 
-#input:focus {
+input:focus {
     outline: none;
-    border: none;
 }
 
-.input_section {
+#input_section {
     display: flex;
-    font-family: monospace;
 }
 
-.path {
+#login_section {
+    display: none;
+}
+
+.GREEN {
     color: lime;
 }
 
-body {
-    font-family: monospace;
+.BB_GREEN {
+    border-bottom: 1px solid lime;
 }

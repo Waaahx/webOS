@@ -1,6 +1,7 @@
 import { Command } from "../Processes/_Command.js";
-import { Message } from "../Processes/_Display.js";
+import { Print } from "../Processes/_Display.js";
 import { Folder, __Folders__ } from "../Processes/_Folder.js";
+import { File, __Files__ } from "../Processes/_File.js";
 
 export const ls = new Command((user, args) => {
     let _path = user.path;
@@ -9,7 +10,13 @@ export const ls = new Command((user, args) => {
     }
     for (let i = 0; i < __Folders__.length; i++) {
         if (__Folders__[i].path === _path) {
-            const message = new Message(`${__Folders__[i].name}/`);
+            const message = new Print(`${__Folders__[i].name}/`, user);
+            message.display();
+        }
+    }
+    for (let i = 0; i < __Files__.length; i++) {
+        if (__Files__[i].path === _path) {
+            const message = new Print(`${__Files__[i].name}`, user);
             message.display();
         }
     }

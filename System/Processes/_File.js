@@ -1,11 +1,11 @@
-class File {
-    constructor(name, path) {
+export class File {
+    constructor(name, path, user) {
         this.name = name;
         this.date = new Date();
         this.path = path;
         this.content = "";
         this.permissions = "000";
-        this.author = "Anonymous";
+        this.author = user;
     }
 
     get() {
@@ -21,6 +21,7 @@ class File {
     }
 
     write(content) {
+        console.log(content);
         this.content = content;
     }
 
@@ -39,4 +40,4 @@ class File {
 
 }
 
-export var __Files__ = {};
+export var __Files__ = [];

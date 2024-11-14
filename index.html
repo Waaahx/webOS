@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-EN">
 
 <head>
-    <title>Home</title>
+    <title>JSOS</title>
     <link rel="stylesheet" href="./Style/styles.css">
+    <link rel="stylesheet" href="./Style/extensions.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 </head>
 
 <body>
-    <div class="container">
-        <div class="historic" id="historic">
-        </div>
-        <div class="input_section">
-            <span id="path" class="path"> : </span>
-            <input type="text" id="input">
+    <div id="terminal">
+        <div id="tabs"></div>
+        <div id="output"></div>
+        <div id="historic"></div>
+        <div id="input_section">
+            <label id="path" for="input" class="GREEN">Admin~/</label>
+            <input type="text" id="input" name="input">
         </div>
     </div>
     <script type="module" src="./main.js"></script>

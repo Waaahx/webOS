@@ -7,6 +7,7 @@ export class User {
         this.permisisonsWrite = write;
         this.permisisonsExecute = execute;
         this.permisisonsOwner = owner;
+        this.editing = false;
         this.path = "/"
     }
 
@@ -20,6 +21,10 @@ export class User {
 
     rename(name) {
         this.name = name;
+    }
+
+    setEditing(editing) {
+        this.editing = editing;
     }
     
 }

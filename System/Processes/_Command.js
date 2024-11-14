@@ -1,4 +1,4 @@
-import { CommandMessage } from "./_Display.js";
+import { Print } from "./_Display.js";
 
 export class Command {
     constructor(method) {
@@ -6,15 +6,14 @@ export class Command {
     }
 
     run(user, args) {
-        let command = args;
-        if (args != null && args.length > 1 && Array.isArray(args)) {
-            command = args.join(" ");
-        }
-        const message = new CommandMessage(`${command}`, user.name, user.path);
-        message.display();
+
+        let command = args.join(" ");
+
+        const message = new Print(`${command}`, user);
+        message.displayDone();
         this.method(user, args);
     }
-    
+
     get() {
         return this;
     }

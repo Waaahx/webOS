@@ -1,0 +1,15 @@
+.ext-js {
+    color: yellow;
+}
+
+.ext-go {
+    color: blue;
+}
+
+.ext-undefined {
+    color: gray;
+}
+
+.ext-cmd {
+    color: white;
+}

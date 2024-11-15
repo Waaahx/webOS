@@ -21,7 +21,7 @@ export const code = new Command((user, output, arg) => {
 
 
 const editFile = (file, user, output) => {
-    const tab = new System_Tab(file.name, "js");
+    const tab = new System_Tab(file.name, file.name.slice(file.name.lastIndexOf(".") + 1));
     tab.display();
     file.display(user, tab, output)
     user.setEditing(true);

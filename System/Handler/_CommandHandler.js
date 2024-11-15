@@ -5,6 +5,7 @@ import { mkdir } from '../Commands/mkdir.js';
 import { ls } from '../Commands/ls.js';
 import { code } from '../Commands/code.js';
 import { help } from '../Commands/help.js';
+import { exec } from '../Commands/exec.js';
 
 const commandMap = {
     clear: clear,
@@ -12,21 +13,23 @@ const commandMap = {
     mkdir: mkdir,
     ls: ls,
     code: code,
-    help: help
+    help: help,
+    exec: exec
 };
 
-export function RunCommand(user, command) {
+export function RunCommand(user, output, command) {
     if (!command) return;
 
     const args = extractArgs(command);
     const cmdKey = command.split(" ")[0];
     const commandToRun = commandMap[cmdKey];
-
+    output.printCommand(user, args.join(" "));
     if (commandToRun) {
-        commandToRun.run(user, args);
+        commandToRun.run(user, output, args);
     } else {
-        notfound.run(user, args);
+        notfound.run(user, output, args);
     }
+    output.initPath(user, command);
 }
 
 function extractArgs(command) {

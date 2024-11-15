@@ -17,11 +17,12 @@ body {
 p {
     margin: 0;
     padding: 0;
+    color: white;
 }
 
 input {
     border: none;
-    width: 100%;
+    width: 90%;
     background-color: transparent;
     color: #ffffff;
 }
@@ -60,4 +61,17 @@ input:focus {
 
 .active_tab {
     opacity: 1;
+}
+
+#output {
+    height: 90%;
+}
+
+textarea {
+    width: 90%;
+    height: 100%;
+    border: 1px solid white;
+    margin: 10px;
+    color: white;
+    background-color: transparent;
 }

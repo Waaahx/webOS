@@ -1,12 +1,11 @@
-export class Tab {
+export class System_Tab {
 
     static id = 0;
 
     constructor(name, extension) {
-        this.id = ++Tab.id;
+        this.id = ++System_Tab.id;
         this.name = name;
         this.extension = extension;
-        this.historic = ""
     }
 
     get() {
@@ -29,10 +28,6 @@ export class Tab {
 
     setExtension(extension) {
         this.extension = extension;
-    }
-
-    setHistoric(historic) {
-        this.historic = historic;
     }
 
     remove() {

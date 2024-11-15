@@ -1,7 +1,7 @@
 import { Command } from "../Processes/_Command.js";
 import { __Folders__ } from "../Processes/_Folder.js";
 
-export const cd = new Command((user, args) => {
+export const cd = new Command((user, output, args) => {
     const argument = args[1]
     if (noArgs(args)) { return; }
     if (isRoot(user.path) && isBackOriented(argument)) { return; }

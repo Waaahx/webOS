@@ -4,9 +4,6 @@ export class Command {
     }
 
     run(user, output, args) {
-
-        let command = args.join(" ");
-
         this.method(user, output, args);
     }
 

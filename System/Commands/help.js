@@ -7,5 +7,5 @@ export const help = new Command((user, output, arg) => {
     output.print(`ls - to display file`);
     output.print(`mkdir - to create directory`);
     output.print(`inject - to inject JS into another`);
-    output.print(`js - to run a JS prog`);
+    output.print(`exec - to exec a prog`);
 });

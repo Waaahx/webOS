@@ -6,6 +6,9 @@ import { ls } from '../Commands/ls.js';
 import { code } from '../Commands/code.js';
 import { help } from '../Commands/help.js';
 import { exec } from '../Commands/exec.js';
+import { cat } from '../Commands/cat.js';
+import { echo } from '../Commands/echo.js';
+import { whoami } from '../Commands/whoami.js';
 
 const commandMap = {
     clear: clear,
@@ -14,7 +17,10 @@ const commandMap = {
     ls: ls,
     code: code,
     help: help,
-    exec: exec
+    exec: exec,
+    cat: cat,
+    echo: echo,
+    whoami: whoami
 };
 
 export function RunCommand(user, output, command) {

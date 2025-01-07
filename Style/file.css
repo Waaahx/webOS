@@ -1,0 +1,74 @@
+.editor-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+}
+
+.syntax-highlighter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow: hidden;
+    pointer-events: none;
+    padding: 10px;
+}
+
+.content-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    color: transparent;
+    caret-color: black;
+    border: none;
+    outline: none;
+    padding: 10px;
+    resize: none;
+}
+
+.autocomplete-container {
+    position: absolute;
+    background: #000;
+    color: #fff;
+    border: 1px solid #ccc;
+    display: none;
+    z-index: 1000;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.autocomplete-item {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.autocomplete-item:hover {
+    background-color: #444;
+}
+
+
+.autocomplete-item {
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.autocomplete-word {
+    font-weight: bold;
+}
+
+.autocomplete-source {
+    font-size: 0.9em;
+    color: #888;
+    margin-left: 10px;
+}

@@ -9,6 +9,7 @@ import { exec } from '../Commands/exec.js';
 import { cat } from '../Commands/cat.js';
 import { echo } from '../Commands/echo.js';
 import { whoami } from '../Commands/whoami.js';
+import { compare } from '../Commands/compare.js';
 
 const commandMap = {
     clear: clear,
@@ -20,7 +21,8 @@ const commandMap = {
     exec: exec,
     cat: cat,
     echo: echo,
-    whoami: whoami
+    whoami: whoami,
+    compare: compare
 };
 
 export function RunCommand(user, output, command) {

@@ -2,7 +2,7 @@ var COLOR = {
     STRING: 'orange',
     NUMBER: 'salmon',
     KEYWORD: 'purple',
-    VARIABLE: 'cyan',
+    VARIABLE: '#1158a4',
     COMMENT: 'green',
     SPECIAL: 'yellow',
     NATIVE: 'teal'

@@ -1,6 +1,5 @@
 body {
     font-family: monospace;
-    cursor: none !important; 
 }
 
 #terminal {
@@ -26,7 +25,6 @@ input {
     width: 90%;
     background-color: transparent;
     color: #ffffff;
-    cursor: none !important; 
 }
 
 input:focus {

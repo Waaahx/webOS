@@ -38,6 +38,9 @@ export class System_File {
         const syntaxHighlighter = document.createElement("div");
         syntaxHighlighter.classList.add("syntax-highlighter");
 
+        const lineNumbers = document.createElement("div");
+        lineNumbers.classList.add("line-numbers");
+
         const contentArea = document.createElement("textarea");
         contentArea.classList.add("content-area");
         contentArea.value = this.content;
@@ -48,6 +51,17 @@ export class System_File {
 
         const updateHighlighting = () => {
             syntaxHighlighter.innerHTML = applySyntaxHighlighting(contentArea.value);
+        };
+
+        const updateLineNumbers = () => {
+            const lines = contentArea.value.split("\n").length;
+            lineNumbers.innerHTML = "";
+            for (let i = 1; i <= lines; i++) {
+                const lineNumber = document.createElement("div");
+                lineNumber.classList.add("line-number");
+                lineNumber.textContent = i;
+                lineNumbers.appendChild(lineNumber);
+            }
         };
 
         const extractUserDefinitions = (content) => {
@@ -151,7 +165,7 @@ export class System_File {
         
             if (match) {
                 const keyword = match[1];
-                const userDefinedSuggestions = extractUserDefinitions(contentArea.value); // Extraire les définitions utilisateur
+                const userDefinedSuggestions = extractUserDefinitions(contentArea.value);
                 const allSuggestions = [
                     ...suggestions.map(word => ({ word, type: "Built-in" })),
                     ...userDefinedSuggestions,
@@ -186,13 +200,27 @@ export class System_File {
         
                         autocompleteContainer.appendChild(item);
                     });
-        
                     const { left, top } = contentArea.getBoundingClientRect();
-                    const lineHeight = 20; // Approximate line height in pixels
-                    const offset = 5; // Extra space between the cursor and the autocomplete container
-        
-                    autocompleteContainer.style.left = `${left}px`;
-                    autocompleteContainer.style.top = `${top + lineHeight + offset}px`;
+                    const { selectionStart } = contentArea;
+                    const text = contentArea.value.substring(0, selectionStart);
+                    const tempSpan = document.createElement("span");
+                    const style = window.getComputedStyle(contentArea);
+                    tempSpan.style.position = "absolute";
+                    tempSpan.style.visibility = "hidden";
+                    tempSpan.style.whiteSpace = "pre-wrap";
+                    tempSpan.style.font = style.font;
+                    tempSpan.style.padding = style.padding;
+                    tempSpan.style.border = style.border;
+                    tempSpan.textContent = text.replace(/\n$/, "\n."); 
+                    document.body.appendChild(tempSpan);
+                    const cursorX = tempSpan.offsetWidth + left;
+                    const cursorY = tempSpan.offsetHeight + top;
+                    
+                    document.body.removeChild(tempSpan);
+                    
+                    // Applique la position au menu d'autocomplétion
+                    autocompleteContainer.style.left = `${cursorX}px`;
+                    autocompleteContainer.style.top = `${cursorY}px`;
                     autocompleteContainer.style.width = "auto";
                     autocompleteContainer.style.display = "block";
                 } else {
@@ -208,6 +236,7 @@ export class System_File {
         contentArea.addEventListener("input", () => {
             updateHighlighting();
             updateAutocomplete();
+            updateLineNumbers();
         });
 
         contentArea.addEventListener("keydown", (event) => {
@@ -227,10 +256,13 @@ export class System_File {
 
         contentArea.addEventListener("scroll", () => {
             syntaxHighlighter.scrollTop = contentArea.scrollTop;
+            lineNumbers.scrollTop = contentArea.scrollTop;
         });
 
         updateHighlighting();
+        updateLineNumbers();
 
+        editorContainer.appendChild(lineNumbers);
         editorContainer.appendChild(syntaxHighlighter);
         editorContainer.appendChild(contentArea);
         editorContainer.appendChild(autocompleteContainer);
